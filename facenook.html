@@ -45,6 +45,50 @@
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
             padding: 20px;
         }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery img:hover {
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+        .friends {
+            margin-top: 20px;
+        }
+        .friends h3 {
+            margin-bottom: 10px;
+        }
+        .friends ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .friends li {
+            margin: 5px 0;
+        }
+        .friends a {
+            text-decoration: none;
+            color: #3b5998;
+            font-weight: bold;
+        }
+        .friends a:hover {
+            text-decoration: underline;
+        }
+        .wall {
+            margin-top: 20px;
+        }
+        .wall h3 {
+            margin-bottom: 10px;
+        }
         .post {
             border-bottom: 1px solid #ddd;
             padding: 10px 0;
@@ -62,6 +106,16 @@
         .post-time {
             font-size: 0.8em;
             color: #999;
+        }
+        .comment {
+            margin-top: 5px;
+            padding-left: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .comment span {
+            font-weight: bold;
+            color: #3b5998;
         }
         footer {
             text-align: center;
@@ -81,25 +135,37 @@
         <p>Aime les pizzas, le disco, et les discussions sérieuses.</p>
     </div>
     <div class="content">
-        <div class="post">
-            <span class="post-author">Des filles chaudes près de chez toi</span>
-            <p class="post-content">Clique ici pour découvrir des célibataires prêtes à discuter dans ta région.</p>
-            <p class="post-time">Il y a 2 heures</p>
+        <h3>Galerie d'images</h3>
+        <div class="gallery">
+            <img src="profile_picture.png" alt="Photo de profil">
+            <img src="photo1.png" alt="Photo 1">
+            <img src="photo2.png" alt="Photo 2">
+            <img src="photo3.png" alt="Photo 3">
         </div>
-        <div class="post">
-            <span class="post-author">Pub bizarre</span>
-            <p class="post-content">Tu ne croiras jamais ce que ces filles font pour attirer ton attention !</p>
-            <p class="post-time">Il y a 5 heures</p>
+        <div class="friends">
+            <h3>Amis</h3>
+            <ul>
+                <li><a href="guillaume_plagavitch.html">Guillaume Plagavitch</a></li>
+                <li><a href="yulia_wallaud.html">Yulia Wallaud</a></li>
+                <li><a href="cecile_maviella.html">Cécile Maviella</a></li>
+                <li><a href="jonathan_cocote.html">Jonathan Cocoté</a></li>
+                <li><a href="lorraine_depabrac.html">Lorraine DePabrac</a></li>
+            </ul>
         </div>
-        <div class="post">
-            <span class="post-author">Des filles chaudes près de chez toi</span>
-            <p class="post-content">Ne manque pas cette opportunité incroyable, Rémi !</p>
-            <p class="post-time">Il y a 7 heures</p>
-        </div>
-        <div class="post">
-            <span class="post-author">SuperAnnonces</span>
-            <p class="post-content">Les meilleures offres et rencontres à deux pas de chez toi.</p>
-            <p class="post-time">Il y a 10 heures</p>
+        <div class="wall">
+            <h3>Mur</h3>
+            <div class="post">
+                <span class="post-author">Des filles chaudes près de chez toi</span>
+                <p class="post-content">Clique ici pour découvrir des célibataires prêtes à discuter dans ta région.</p>
+                <p class="post-time">Il y a 2 heures</p>
+                <div class="comment"><span>Rémi Tropignon :</span> Je suis intéressé.</div>
+            </div>
+            <div class="post">
+                <span class="post-author">Viens baiser sur Balou</span>
+                <p class="post-content">Des offres spéciales pour te connecter rapidement et t'amuser !</p>
+                <p class="post-time">Il y a 5 heures</p>
+                <div class="comment"><span>Rémi Tropignon :</span> Je suis intéressé.</div>
+            </div>
         </div>
     </div>
     <footer>
