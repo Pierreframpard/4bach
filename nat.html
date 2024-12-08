@@ -7,70 +7,40 @@
         <title>Nature - 4bach</title>
         <style>
             body {
-                font-family: Verdana, Arial, sans-serif;
-                background-color: #EEF2FF;
+                background-color: #F0E0D6;
                 color: #800000;
+                font-family: Verdana, sans-serif;
                 margin: 0;
                 padding: 0;
             }
+            a {
+                color: #0000EE;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
             header {
-                background-color: #D9BFB7;
+                background-color: #2B2B2B;
+                color: #FFFFFF;
                 padding: 10px;
-                border-bottom: 1px solid #CC1105;
                 text-align: center;
+                font-size: 24px;
             }
             .container {
-                max-width: 980px;
+                width: 90%;
+                max-width: 800px;
                 margin: 20px auto;
                 background-color: #FFFFFF;
-                border: 1px solid #D9BFB7;
-                padding: 15px;
+                padding: 20px;
+                border: 1px solid #CCCCCC;
                 border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            .image-container {
-                text-align: center;
-                margin: 20px 0;
             }
             .image-container img {
                 max-width: 100%;
                 height: auto;
-                border-radius: 5px;
-            }
-            .comments {
-                margin-top: 20px;
-            }
-            .comments h3 {
-                border-bottom: 2px solid #CC1105;
-                padding-bottom: 5px;
-                margin-bottom: 10px;
-            }
-            .comment-form textarea {
-                width: 100%;
-                height: 80px;
-                margin-bottom: 10px;
-                border: 1px solid #D9BFB7;
-                border-radius: 5px;
-                padding: 10px;
-            }
-            .comment-form button {
-                background-color: #800000;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-            .comment-list {
-                list-style: none;
-                padding: 0;
-            }
-            .comment-list li {
-                margin-bottom: 10px;
-                padding: 10px;
-                background-color: #F5F5F5;
-                border: 1px solid #D9BFB7;
-                border-radius: 5px;
+                border-radius: 8px;
+                margin: 20px 0;
             }
         </style>
     </head>
@@ -79,49 +49,31 @@
             <h1>Nature</h1>
         </header>
         <div class="container">
-            <p>Descriptions de lieux naturels imaginaires.</p>
+            <p>Beautés naturelles et écosystèmes locaux.</p>
             <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Nature_landscape.jpg" alt="Nature">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Nature_landscape.jpg" alt="Nature">
             </div>
-            <div class="comments">
-                <h3>Commentaires</h3>
-                <form class="comment-form" onsubmit="addComment(event, 'nat')">
-                    <textarea id="comment-input-nat" placeholder="Ajoutez un commentaire..."></textarea>
-                    <button type="submit">Envoyer</button>
-                </form>
-                <ul class="comment-list" id="comment-list-nat"></ul>
-            </div>
+            
+            
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = window.location.href;
+            this.page.identifier = 'nature.html';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://4bach.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Veuillez activer JavaScript pour voir les <a href="https://disqus.com/?ref_noscript">commentaires propulsés par Disqus.</a></noscript>
+    
         </div>
-        <script>
-            function addComment(event, board_code) {
-                event.preventDefault();
-                const input = document.getElementById(`comment-input-$nat`);
-                const commentList = document.getElementById(`comment-list-$nat`);
-                const commentText = input.value.trim();
-                if (commentText) {
-                    const newComment = document.createElement('li');
-                    newComment.textContent = commentText;
-                    commentList.appendChild(newComment);
-                    input.value = '';
-                    saveComment(board_code, commentText);
-                }
-            }
-            function saveComment(board_code, commentText) {
-                const savedComments = JSON.parse(localStorage.getItem(board_code)) || [];
-                savedComments.push(commentText);
-                localStorage.setItem(board_code, JSON.stringify(savedComments));
-            }
-            function loadComments(board_code) {
-                const savedComments = JSON.parse(localStorage.getItem(board_code)) || [];
-                const commentList = document.getElementById(`comment-list-$nat`);
-                savedComments.forEach(comment => {
-                    const newComment = document.createElement('li');
-                    newComment.textContent = comment;
-                    commentList.appendChild(newComment);
-                });
-            }
-            document.addEventListener('DOMContentLoaded', () => loadComments('nat'));
-        </script>
+        <footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">
+            <p>&copy; 2024 - 4bach</p>
+        </footer>
     </body>
     </html>
     
