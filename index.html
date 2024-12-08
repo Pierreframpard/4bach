@@ -4,136 +4,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>4bach - Le Forum de Forbach</title>
+    <title>4bach - Forum</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #F0EAD6;
-            color: #333;
+            font-family: Verdana, Arial, sans-serif;
+            background-color: #EEF2FF;
+            color: #800000;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #D4AA70;
+            background-color: #D9BFB7;
             padding: 10px;
-            text-align: center;
-            border-bottom: 2px solid #A67B5B;
+            text-align: left;
+            border-bottom: 1px solid #CC1105;
         }
-        header h1 {
-            font-size: 2em;
-            margin: 0;
+        header img {
+            height: 60px;
         }
-        nav {
-            background-color: #FFF4E6;
+        .container {
+            max-width: 980px;
+            margin: 20px auto;
             padding: 10px;
-            border-bottom: 2px solid #A67B5B;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-        }
-        nav li {
-            display: inline;
-        }
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #A67B5B;
-        }
-        .content {
-            margin: 20px;
-            padding: 10px;
-            background-color: #FFF;
-            border: 2px solid #D4AA70;
+            background-color: #FFFFFF;
+            border: 1px solid #D9BFB7;
             border-radius: 5px;
         }
-        .post {
-            border-bottom: 1px solid #CCC;
-            padding: 10px 0;
+        .boards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
         }
-        .post:last-child {
-            border-bottom: none;
+        .board {
+            border: 1px solid #D9BFB7;
+            padding: 5px;
+            background-color: #F5F5F5;
         }
-        .post h2 {
-            font-size: 1.2em;
-            margin: 0 0 5px;
-            color: #A67B5B;
+        .board-title {
+            font-weight: bold;
+            color: #CC1105;
+            margin-bottom: 5px;
         }
-        .post p {
-            margin: 5px 0;
+        .board-link a {
+            text-decoration: none;
+            color: #0000EE;
+        }
+        .board-link a:hover {
+            text-decoration: underline;
         }
         footer {
-            text-align: center;
+            background-color: #D9BFB7;
             padding: 10px;
-            font-size: 0.9em;
-            color: #555;
-        }
-        .facenook {
             margin-top: 20px;
             text-align: center;
         }
-        .facenook a {
-            text-decoration: none;
-            color: #3b5998;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin: 0 15px;
-        }
-        .facenook img {
-            width: 100px;
-            height: auto;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             margin-top: 10px;
+        }
+        .footer-links a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .footer-links img {
+            height: 40px;
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>4bach - Le Forum de Forbach</h1>
-        <p>L'endroit où Forbach devient épique</p>
+        <img src="4bach.png" alt="4bach Logo">
     </header>
-    <nav>
-        <ul>
-            <li><a href="wiesberg.html">Wiesberg</a></li>
-            <li><a href="brusch.html">Le Brusch</a></li>
-            <li><a href="jim_balesto.html">Jim Balesto</a></li>
-            <li><a href="histoire_locale.html">Histoire locale</a></li>
-            <li><a href="forbach_futur.html">Forbach futur</a></li>
-        </ul>
-    </nav>
-    <div class="content">
-        <div class="post">
-            <h2>La légende du Wiesberg</h2>
-            <p>Les anciens disent que chaque pleine lune, le Wiesberg s'illumine de la présence mystérieuse de Jim Balesto en tenue disco. Qu'en pensez-vous ?</p>
-        </div>
-        <div class="post">
-            <h2>Le Brusch et ses secrets</h2>
-            <p>Une rumeur circule que les bois du Brusch abritent une entrée cachée menant à un ancien bunker des années 70. Une expédition est-elle nécessaire ?</p>
-        </div>
-        <div class="post">
-            <h2>Jim Balesto : concert rétro en vue</h2>
-            <p>Des affiches annoncent un concert mystérieux au cœur de Forbach. Mais est-ce vraiment Jim Balesto ou une légende urbaine ? Partagez vos infos !</p>
-        </div>
-        <div class="post">
-            <h2>Forbach, capitale disco</h2>
-            <p>Si Forbach devenait le nouveau centre mondial du disco rétro ? Imaginez un festival annuel : costumes brillants, musique seventies et concours de danse !</p>
+    <div class="container">
+        <h1>Bienvenue sur 4bach</h1>
+        <p>Le forum des passionnés de Forbach et de ses légendes.</p>
+        <div class="boards">
+
+            <div class="board">
+                <div class="board-title">Rencontre chaudes</div>
+                <div class="board-link"><a href="rch.html">/rch/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Disco</div>
+                <div class="board-link"><a href="dis.html">/dis/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Mine</div>
+                <div class="board-link"><a href="min.html">/min/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Forbach</div>
+                <div class="board-link"><a href="fch.html">/fch/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Grève</div>
+                <div class="board-link"><a href="grv.html">/grv/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Rétro</div>
+                <div class="board-link"><a href="rto.html">/rto/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Tourisme</div>
+                <div class="board-link"><a href="trs.html">/trs/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Histoire locale</div>
+                <div class="board-link"><a href="hlo.html">/hlo/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">FaceNook</div>
+                <div class="board-link"><a href="facenook.html">/facenook.html/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">WikiBach</div>
+                <div class="board-link"><a href="wikibach.html">/wikibach.html/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Musique</div>
+                <div class="board-link"><a href="msq.html">/msq/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Artisanat</div>
+                <div class="board-link"><a href="art.html">/art/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Cuisine</div>
+                <div class="board-link"><a href="cui.html">/cui/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Nature</div>
+                <div class="board-link"><a href="nat.html">/nat/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Mode</div>
+                <div class="board-link"><a href="mod.html">/mod/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Jeux</div>
+                <div class="board-link"><a href="jeu.html">/jeu/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Cinéma</div>
+                <div class="board-link"><a href="cin.html">/cin/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Sciences</div>
+                <div class="board-link"><a href="sci.html">/sci/</a></div>
+            </div>
+    
+            <div class="board">
+                <div class="board-title">Voyage</div>
+                <div class="board-link"><a href="voy.html">/voy/</a></div>
+            </div>
+    
         </div>
     </div>
     <footer>
-        <p>&copy; 2024 4bach. Forum fictif pour le plaisir des fans de Forbach.</p>
-        <div class="facenook">
-            <a href="facenook.html">
-                <img src="facenook_logo.png" alt="FaceNook Logo">
-                FaceNook
-            </a>
+        <p>&copy; 2024 4bach - Forum fictif pour les fans de Forbach.</p>
+        <div class="footer-links">
             <a href="wikibach.html">
-                <img src="wikibach_logo.png" alt="WikiBach Logo">
-                WikiBach
+                <img src="wikibach_logo.png" alt="WikiBach Logo">WikiBach
+            </a>
+            <a href="facenook.html">
+                <img src="facenook_logo.png" alt="FaceNook Logo">FaceNook
             </a>
         </div>
     </footer>
