@@ -1,0 +1,127 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Artisanat - 4bach</title>
+        <style>
+            body {
+                font-family: Verdana, Arial, sans-serif;
+                background-color: #EEF2FF;
+                color: #800000;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background-color: #D9BFB7;
+                padding: 10px;
+                border-bottom: 1px solid #CC1105;
+                text-align: center;
+            }
+            .container {
+                max-width: 980px;
+                margin: 20px auto;
+                background-color: #FFFFFF;
+                border: 1px solid #D9BFB7;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .image-container {
+                text-align: center;
+                margin: 20px 0;
+            }
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
+            .comments {
+                margin-top: 20px;
+            }
+            .comments h3 {
+                border-bottom: 2px solid #CC1105;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+            }
+            .comment-form textarea {
+                width: 100%;
+                height: 80px;
+                margin-bottom: 10px;
+                border: 1px solid #D9BFB7;
+                border-radius: 5px;
+                padding: 10px;
+            }
+            .comment-form button {
+                background-color: #800000;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .comment-list {
+                list-style: none;
+                padding: 0;
+            }
+            .comment-list li {
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color: #F5F5F5;
+                border: 1px solid #D9BFB7;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Artisanat</h1>
+        </header>
+        <div class="container">
+            <p>Informations sur l'artisanat fictif.</p>
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Craft.jpg" alt="Artisanat">
+            </div>
+            <div class="comments">
+                <h3>Commentaires</h3>
+                <form class="comment-form" onsubmit="addComment(event, 'art')">
+                    <textarea id="comment-input-art" placeholder="Ajoutez un commentaire..."></textarea>
+                    <button type="submit">Envoyer</button>
+                </form>
+                <ul class="comment-list" id="comment-list-art"></ul>
+            </div>
+        </div>
+        <script>
+            function addComment(event, board_code) {
+                event.preventDefault();
+                const input = document.getElementById(`comment-input-$art`);
+                const commentList = document.getElementById(`comment-list-$art`);
+                const commentText = input.value.trim();
+                if (commentText) {
+                    const newComment = document.createElement('li');
+                    newComment.textContent = commentText;
+                    commentList.appendChild(newComment);
+                    input.value = '';
+                    saveComment(board_code, commentText);
+                }
+            }
+            function saveComment(board_code, commentText) {
+                const savedComments = JSON.parse(localStorage.getItem(board_code)) || [];
+                savedComments.push(commentText);
+                localStorage.setItem(board_code, JSON.stringify(savedComments));
+            }
+            function loadComments(board_code) {
+                const savedComments = JSON.parse(localStorage.getItem(board_code)) || [];
+                const commentList = document.getElementById(`comment-list-$art`);
+                savedComments.forEach(comment => {
+                    const newComment = document.createElement('li');
+                    newComment.textContent = comment;
+                    commentList.appendChild(newComment);
+                });
+            }
+            document.addEventListener('DOMContentLoaded', () => loadComments('art'));
+        </script>
+    </body>
+    </html>
+    
